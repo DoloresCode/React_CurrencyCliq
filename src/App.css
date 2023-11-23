@@ -41,3 +41,10 @@ select {
   height: auto; 
   margin-bottom: -2rem;
 }
+
+.currency-label {
+  font-weight: bold;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 3rem;
+}
