@@ -1,9 +1,17 @@
-
+import React from 'react';
 import './App.css';
+import CurrencyElement from './CurrencyElement';
+
 
 function App() {
   return (
-    <h1>Hello World!</h1>
+    <div>
+      <h1>CurrencyCliQ</h1>
+      <p>Your go-to solution for fast and reliable currency conversion.</p>
+      <h1>Convert</h1>
+      <CurrencyElement />
+      <CurrencyElement />
+    </div> 
   );
 }
 
