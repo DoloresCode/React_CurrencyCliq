@@ -2,6 +2,11 @@ import React from 'react'
 
 export default function CurrencyElement() {
   return (
-    <div>CurrencyElement</div>
+    <div>
+        <input type="number" />
+        <select>
+            <option value="USD">USD</option>
+        </select>
+    </div>
   )
 }
