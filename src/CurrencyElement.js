@@ -2,14 +2,17 @@ import React from 'react'
 
 export default function CurrencyElement(props) {
     const {
-        currencyChoices
+        currencyChoices,
+        pickedCurrency,
+        /* Action when change currency */ 
+        onChangeCurrency,
     } = props
   return (
     <div>
         <input type="number" className="input"/>
-        <select>
-            {currencyChoices.map((option, index) => (
-                <option key={index + 1} value={option}>{option}</option>
+        <select value={pickedCurrency} onChange={onChangeCurrency}>
+            {currencyChoices.map((option) => (
+                <option key={option} value={option}>{option}</option>
                 ))}
         </select>
     </div>
