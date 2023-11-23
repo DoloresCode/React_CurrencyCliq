@@ -8,8 +8,8 @@ export default function CurrencyElement(props) {
     <div>
         <input type="number" className="input"/>
         <select>
-            {currencyChoices.map(option => (
-                <option key={option} value={option}>{option}</option>
+            {currencyChoices.map((option, index) => (
+                <option key={index + 1} value={option}>{option}</option>
                 ))}
         </select>
     </div>
