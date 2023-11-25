@@ -26,7 +26,7 @@ CurrencyCliQ is a convenient currency conversion app that provides real-time cur
 
 ## Image
 
-<img width="595" alt="CurrencyCliQ_App" src="https://github.com/DoloresCode/React_CurrencyCliq/assets/117631390/cd9ce2f5-9db3-47eb-b44c-f4ee460ad9cb">
+<img width="604" alt="Screenshot 2023-11-25 at 18 47 17" src="https://github.com/DoloresCode/React_CurrencyCliq/assets/117631390/f516fa43-1716-40af-bec8-26e6052959dd">
 
 ## Installation
 

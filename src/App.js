@@ -1,6 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Footer from './Footer';
 import CurrencyElement from './CurrencyElement';
 
 /* Fetch API currency data */ 
@@ -89,10 +90,10 @@ function App() {
 
   return (
     <div>
-    <h1>CurrencyCliQ</h1>
-    <p>Your go-to solution for fast and reliable currency conversion.</p>
-    <img src="/images/img_currency_cliq.png" alt="Currency_images" className="currency-image" />
-    <h1>Convert</h1>
+      <h1>CurrencyCliQ</h1>
+      <p>Your go-to solution for fast and reliable currency conversion.</p>
+      <img src="/images/img_currency_cliq.png" alt="Currency_images" className="currency-image" />
+      <h1>Convert</h1>
     <div>
     <label className="currency-label">From </label>
     
@@ -106,19 +107,20 @@ function App() {
       />
     </div>
     <div>
-    <label className="currency-label">To </label>
-      <CurrencyElement 
-      currencyChoices={currencyChoices}
-      pickedCurrency={toCurrency}
-      /*When we change the currency, we have an event and we get the value of the currency selected */  
-      onChangeCurrency={e => setToCurrency(e.target.value)}
-      onChangeAmountMoney={handleToAmountMoneyConvert}
-      amount={toAmount}
-      />
+      <label className="currency-label">To </label>
+        <CurrencyElement 
+        currencyChoices={currencyChoices}
+        pickedCurrency={toCurrency}
+        /*When we change the currency, we have an event and we get the value of the currency selected */  
+        onChangeCurrency={e => setToCurrency(e.target.value)}
+        onChangeAmountMoney={handleToAmountMoneyConvert}
+        amount={toAmount}
+        />
     </div>
     <div className="disclaimer">
       <p>* Free version only allows conversion from Euro to other currencies.</p>
     </div>
+    <Footer /> {/* Footer component */}
   </div> 
   );
 }
