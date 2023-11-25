@@ -33,30 +33,59 @@ function App() {
     }
 
     /* Fetch API currency data */
-  useEffect(() => {
-    fetch(BASE_API_URL)
-      .then(res => res.json())
-      .then(data => {
-        /* Set the initial values from Euros to USD */
-        const initialCurrency = Object.keys(data.rates)[149]
-        setCurrencyChoices([data.base, ...Object.keys(data.rates)])
-        setFromCurrency(data.base)
-        setToCurrency(initialCurrency)
-        setExchangeRate(data.rates[initialCurrency])
-      })
-  }, [])
+    useEffect(() => {
+      fetch(BASE_API_URL)
+        .then(res => res.json())
+        .then(data => {
+          if (data && data.rates) {
+            /* If data is valid and contains rates, then process the data*/
+            const initialCurrency = Object.keys(data.rates)[149]; /* USD the 150th currency*/
+            setCurrencyChoices([...Object.keys(data.rates)]);
+            setFromCurrency(data.base);
+            setToCurrency(initialCurrency);
+            setExchangeRate(data.rates[initialCurrency]);
+          } else {
+            /* this handle the scenario where data or data.rates is undefined/null*/
+            console.error("Invalid API response");
+          }
+        })
+        .catch(error => {
+          console.error('Fetching currency data failed:', error);
+        });
+    }, []);
+    
+    /* It create a function to handle currency when changed */ 
+    useEffect(() => {
+      if (fromCurrency != null && toCurrency != null) {
+        fetch(`${BASE_API_URL}&base=${fromCurrency}&symbols=${toCurrency}`)
+          .then(res => res.json())
+          .then(data => {
+            // verify that the data is valid as I wanted to be able to use other currencies to convert from (I discover that free version only allow to convert from Euro to other currencies)
+            // console.log('value', data.rates[toCurrency]);
+            if (data.rates && data.rates[toCurrency]) {
+              setExchangeRate(data.rates[toCurrency]);
+            } else {
+              console.error('Invalid API response');
+            }
+          })
+          .catch(error => {
+            console.error('Fetching currency data failed:', error);
+          });
+      }
+    }, [fromCurrency, toCurrency]);
 
   /* When we want to convert an amount, we enter the amount in the input box and the value added trigged the event*/
   /* we get the convertion of the value from the input box "from" and not from the input box "to" */
-  function handleFromAmountMoneyConvert(e) {
-    setAmountFrom(e.target.value)
-    setResultAmount(true)
-  }
+    function handleFromAmountMoneyConvert(e) {
+      setAmountFrom(e.target.value)
+      setResultAmount(true)
+    }
   
-  function handleToAmountMoneyConvert(e) {
-    setAmountFrom(e.target.value)
-    setResultAmount(false)
-  }
+    function handleToAmountMoneyConvert(e) {
+      setAmountFrom(e.target.value)
+      setResultAmount(false)
+    }
+  
 
   return (
     <div>
@@ -86,7 +115,9 @@ function App() {
       onChangeAmountMoney={handleToAmountMoneyConvert}
       amount={toAmount}
       />
-      
+    </div>
+    <div className="disclaimer">
+      <p>* Free version only allows conversion from Euro to other currencies.</p>
     </div>
   </div> 
   );

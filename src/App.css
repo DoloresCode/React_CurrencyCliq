@@ -48,3 +48,8 @@ select {
   margin-right: 10px;
   margin-bottom: 3rem;
 }
+
+.disclaimer {
+  font-size: 12px; 
+  margin-top: -5px; 
+}
