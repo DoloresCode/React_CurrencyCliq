@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# CurrencyCliQ App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+CurrencyCliQ is a convenient currency conversion app that provides real-time currency exchange rates. It is built using React and leverages the `exchangeratesapi.io` API to fetch the latest currency rates. Users can easily convert amounts from one currency to another.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- Dynamic currency conversion between various currencies.
+- Real-time exchange rate updates.
+- User-friendly interface for selecting currencies and inputting amounts.
+- Display of converted amounts based on current exchange rates.
 
-### `npm start`
+## Dependencies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React
+- exchangeratesapi.io API
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies
 
-### `npm test`
+- React.js
+- HTML
+- CSS
+- JavaScript
+- npm
+- Git
+- GitHub
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Image
 
-### `npm run build`
+<img width="595" alt="CurrencyCliQ_App" src="https://github.com/DoloresCode/React_CurrencyCliq/assets/117631390/cd9ce2f5-9db3-47eb-b44c-f4ee460ad9cb">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Clone the Repository**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+git clone https://github.com/DoloresCode/React_CurrencyCliq
 
-### `npm run eject`
+2. **Navigate to the App Directory**:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+cd path/to/react_currencycliq
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Install Dependencies**:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+npm install
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Set Up Environment Variables**:
 
-## Learn More
+Create a `.env` file in the root directory and add your `exchangeratesapi.io` API key:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+REACT_APP_API_KEY=your_api_key_here
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. **Start the Application**:
 
-### Code Splitting
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The app should now be running on `localhost:3000`.
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Select the currency you want to convert from and to using the dropdown menus.
+- Enter the amount to be converted in the 'From' input field.
+- The converted amount will automatically be displayed in the 'To' input field.
 
-### Making a Progressive Web App
+## Disclaimer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- The free version of the `exchangeratesapi.io` API only allows conversions from Euro to other currencies.
 
-### Advanced Configuration
+## Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Bi-directional Conversion**: Allow conversion from 'To' currency to 'From' currency.
+- **Historical Data**: Implement a feature to view historical exchange rates.
+- **Currency Trends**: Add functionality to analyze currency performance over time.
